@@ -1,0 +1,118 @@
+{% extends "app/base_app.html" %}
+{% block content %}
+{% load static %}
+{% csrf_token %}
+<div class="row">
+    <div class="col-lg-12 mb-4 order-0">
+        <div class="card">
+            <h5 class="card-header">Representation Dynamique</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th>Les Details du Joueur</th>
+                        <th>Explication de la Situation</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">                  
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                        Nom Et Prenom du Joueur
+                    </strong></td>
+                    <td>Test Player</td>
+                  </tr>
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                        Position du Joueur
+                    </strong></td>
+                    <td>Defence</td>
+                  </tr>
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                        Numero du Joueur
+                    </strong></td>
+                    <td>6</td>
+                  </tr>
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                        Hauteur Et Poids du Joueur
+                    </strong></td>
+                    <td>1.86H 87Kg</td>
+                  </tr>
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                        Status du Joueur
+                    </strong></td>
+                    <td><span class="badge bg-label-success me-1">Bonne</span></td>
+                  </tr>
+                  <tr class="table-light">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>
+                       Prediction du Situation
+                    </strong></td>
+                    <td>Ce Joueur est en Bonne Forme et peut jouer dans ce match sans aucun probleme</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div>
+</div>
+<!-- Total Revenue -->
+<div class="row">
+    <div class="col-lg-5">
+        <div class="card mb-6">
+            <div class="row row-bordered g-0">
+                <h5 class="card-header m-0 me-2 pb-3">Critère de Performance du Joueur</h5>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div id="clientRadarChart" class="px-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="card mb-6">
+            <div class="row row-bordered g-0">
+                <div class="col-md-8">
+                    <h5 class="card-header m-0 me-2 pb-3">
+                        Temperture Actuel
+                    </h5>
+                    <div id="totalRevenueChart" class="px-2"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="mb-3">Performance de joueur actual</h6>
+                        </div>
+                    </div>
+                    <div id="growthChart"></div>
+                    <div class="text-center fw-semibold pt-3 mb-2">62% Efficacité</div>
+                    <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                        <div class="d-flex">
+                            <div class="me-2">
+                                <span class="badge bg-label-primary p-2"><i class="bx bx-collection text-primary"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <small>Status</small>
+                                <h6 class="mb-0">Bonne</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-8">
+            <div class="row row-bordered g-0">
+                <h5 class="card-header m-0 me-2 pb-3">
+                    Fréquence Cardiaque
+                </h5>
+                <div id="cardiacFrequencyChart" class="px-2 m-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

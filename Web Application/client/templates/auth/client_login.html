@@ -1,0 +1,49 @@
+{% extends 'auth/base_auth.html' %}
+{% block content %}
+{% load static %}
+<p class="mb-4 text-center"
+>Veuillez vous connecter à votre compte et commencer l'aventure</p>
+<form class="mb-3" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">
+            Nom d'utilisateur
+        </label>
+        {{ form.username }}
+    </div>
+    <div class="mb-3 form-password-toggle">
+        <label class="form-label" for="password">
+            Mot de passe
+        </label>
+        <div class="input-group input-group-merge">
+            {{ form.password }}
+            <span class="input-group-text cursor-pointer">
+                <i class="bx bx-hide"></i>
+            </span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember-me" />
+            <label class="form-check-label" for="remember-me">
+                Se souvenir de moi    
+            </label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary d-grid w-100" type="submit">
+            Connexion
+        </button>
+    </div>
+</form>
+<p class="text-center">
+  <span>
+    Vous n'avez pas de compte ?
+  </span>
+  <a href="{% url 'client-signup' %}">
+    <span>
+        Créer un compte
+    </span>
+  </a>
+</p>
+{% endblock content %}

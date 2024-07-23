@@ -1,0 +1,63 @@
+{% extends 'auth/base_auth.html' %}
+{% block content %}
+{% load static %}
+<p class="mb-4">Rendez la gestion de vos applications facile et amusante !</p>
+<form class="mb-3" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">
+            Nom d'utilisateur
+        </label>
+        {{ form.username }}
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">
+            Adresse e-mail
+        </label>
+        {{ form.email }}
+    </div>
+    <div class="mb-3 form-password-toggle">
+        <label class="form-label" for="password">
+            Mot de passe
+        </label>
+        <div class="input-group input-group-merge">
+            {{ form.password1 }}
+            <span class="input-group-text cursor-pointer">
+                <i class="bx bx-hide"></i>
+            </span>
+        </div>
+    </div>
+    <div class="mb-3 form-password-toggle">
+        <label class="form-label" for="password">
+            Confirmer le mot de passe
+        </label>
+        <div class="input-group input-group-merge">
+            {{ form.password2 }}
+            <span class="input-group-text cursor-pointer">
+                <i class="bx bx-hide"></i>
+            </span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+            <label class="form-check-label" for="terms-conditions">
+                J'accepte les conditions <a href="javascript:void(0);">d'utilisation et la politique de confidentialité</a>
+            </label>
+        </div>
+    </div>
+    <button class="btn btn-primary d-grid w-100">
+        Créer un compte
+    </button>
+</form>
+<p class="text-center">
+    <span>
+        Vous avez déjà un compte ?
+    </span>
+    <a href="{% url 'client-login' %}">
+        <span>
+            Se connecter
+        </span>
+    </a>
+</p>
+{% endblock content %}
